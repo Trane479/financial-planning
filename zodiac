@@ -23,5 +23,5 @@ elif day >= 23 and month.lower() == 'декабрь' or day <= 20 and month.lowe
     print('Козерог')
 elif day >= 21 and month.lower() == 'январь' or day <= 19 and month.lower() == 'февраль':
     print('Водолей')
-elif day >= 20 and month.lower() == 'февраль' or day <= 20 and month.lower() == 'марта':
+elif day >= 20 and month.lower() == 'февраль' or day <= 20 and month.lower() == 'март':
     print('Весы')

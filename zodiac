@@ -1,0 +1,27 @@
+month = input('Введите месяц: ')
+day = int(input('Введите день: '))
+
+if day >= 21 and month.lower() == 'март' or day <= 20 and month.lower() == 'апрель':
+    print('Овен')
+elif day >= 21 and month.lower() == 'апрель' or day <= 21 and month.lower() == 'май':
+    print('Телец')
+elif day >= 22 and month.lower() == 'май' or day <= 21 and month.lower() == 'июнь':
+    print('Близнецы')
+elif day >= 22 and month.lower() == 'июнь' or day <= 22 and month.lower() == 'июль':
+    print('Рак')
+elif day >= 23 and month.lower() == 'июль' or day <= 23 and month.lower() == 'август':
+    print('Лев')
+elif day >= 24 and month.lower() == 'август' or day <= 23 and month.lower() == 'сентябрь':
+    print('Дева')
+elif day >= 24 and month.lower() == 'сентябрь' or day <= 23 and month.lower() == 'октябрь':
+    print('Весы')
+elif day >= 24 and month.lower() == 'октябрь' or day <= 22 and month.lower() == 'ноябрь':
+    print('Скорпион')
+elif day >= 23 and month.lower() == 'ноябрь' or day <= 22 and month.lower() == 'декабрь':
+    print('Стрелец')
+elif day >= 23 and month.lower() == 'декабрь' or day <= 20 and month.lower() == 'январь':
+    print('Козерог')
+elif day >= 21 and month.lower() == 'январь' or day <= 19 and month.lower() == 'февраль':
+    print('Водолей')
+elif day >= 20 and month.lower() == 'февраль' or day <= 20 and month.lower() == 'марта':
+    print('Весы')

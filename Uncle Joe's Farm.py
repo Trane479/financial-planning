@@ -70,8 +70,17 @@ farm = {
 
 
 def main():
-    command = input('Что хотите сделать?').lower()
-    if command == 'f'.lower():
+    max_weight = 0
+
+    for animal in farm['Feed']:
+        if animal.weight >= max_weight:
+            max_weight = animal.weight
+            max_weight_name = animal.name
+    print(f'Больше всех весит {max_weight_name} - {max_weight}кг.')
+
+    command = input('Что вы хотите сделать?\n').lower()
+
+    if command == 'f':
         print('Кого хотите покормить?')
 
         for animals in farm['Feed']:
@@ -119,8 +128,12 @@ def main():
 
     if command == 'i':
         print('Список доступных команд:\n'
-              'mas - услышать животное'
-              'ge - взять яйца у ')
+              'mas - услышать животное\n'
+              'ge - взять яйца\n'
+              'gs - взять шерсть\n'
+              'gm - взять молоко\n'
+              'f - покормить животное\n'
+              )
 
 
 main()

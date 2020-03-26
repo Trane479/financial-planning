@@ -37,11 +37,14 @@ def add_document():
     doc_type = input('Введите тип нового документа: ')
     name = input('Введите имя: ')
     shelf = input('Введите номер полки, на которой будет храниться документ: ')
+    if shelf not in directories:
+        print('Данной полки нет в каталоге')
 
-    documents.append({'type': doc_type, 'number': doc_number, 'name': name})
-    for directory in directories:
-        if shelf == directory:
-            directories[directory].append(doc_number)
+    else:
+        documents.append({'type': doc_type, 'number': doc_number, 'name': name})
+        for directory in directories:
+            if shelf == directory:
+                directories[directory].append(doc_number)
     return
 
 
@@ -58,7 +61,17 @@ def delete_document():
 
 def move_document():
     doc_number = input('Введите номер документа, который хотите переместить: ')
+    all_docs = []
+
+    for document in documents:
+        all_docs.append(document['number'])
+
+    if doc_number not in all_docs:
+        print('Данный документ отсутствует в каталоге')
+        return
+
     shelf = input('Введите номер полки на которую хотите переместить документ: ')
+
     for directory in directories.values():
         if doc_number in directory:
             directory.remove(doc_number)
@@ -70,7 +83,6 @@ def move_document():
     if i.lower() == 'да' or 'yes':
         add_shelf(shelf)
         directories[shelf].append(doc_number)
-        print(directories)
 
 
 def add_shelf(new_shelf):

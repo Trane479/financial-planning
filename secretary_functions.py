@@ -90,6 +90,19 @@ def add_shelf(new_shelf):
     return
 
 
+def show_name():
+
+    for document in documents:
+        try:
+            if document['name']:
+                print(document['name'])
+            else:
+                raise KeyError
+        except KeyError:
+            print(f" у документа {document['number']} нет владельца")
+    return
+
+
 def commands_list():
     print('Список всех доступных команд:\n'
           'p - выводит имя человека, которому принадлежит документ\n'
@@ -99,6 +112,7 @@ def commands_list():
           'd - удаляет документ из каталога и с полки\n'
           'm - перемещает документ с одной полки на другую\n'
           'as - добавляет новую полку\n'
+          'sn - показывает владельцев всех документов'
           )
 
 
@@ -121,6 +135,8 @@ def main():
             add_shelf(input('Введите номер новой полки: '))
         elif command == 'i':
             commands_list()
+        elif command == 'sn':
+            show_name()
         elif command == 'exit':
             return
         else:

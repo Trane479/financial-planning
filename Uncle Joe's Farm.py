@@ -71,13 +71,14 @@ farm = {
 
 def main():
     max_weight = 0
-
+    sum_weight = 0
     for animal in farm['Feed']:
+        sum_weight += animal.weight
         if animal.weight >= max_weight:
             max_weight = animal.weight
             max_weight_name = animal.name
     print(f'Больше всех весит {max_weight_name} - {max_weight}кг.')
-
+    print(f'Общий вес всех животных на ферме {sum_weight}кг.')
     command = input('Что вы хотите сделать?\n').lower()
 
     if command == 'f':

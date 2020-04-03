@@ -3,6 +3,8 @@ def calc(expression):
     operands = []
     result = []
     for item in expression:
+        math_sign = ['+', '-', '*', '/']
+        assert expression[0] in math_sign, 'Операции не найдено!'
         try:
             if item.isalpha():
                 raise AssertionError
@@ -24,22 +26,21 @@ def calc(expression):
         if not len(operands) > 1:
             raise AssertionError
     except AssertionError:
-        return 'Мало операндов'
-    for operand in operands:
+        return 'Введите два положительных числа'
 
-        operator = operator[0]
-        if operator == '+':
-            result = int(operands[0]) + int(operands[1])
-        elif operator == '-':
-            result = int(operands[0]) - int(operands[1])
-        elif operator == '*':
-            result = int(operands[0]) * int(operands[1])
-        elif operator == '/':
-            try:
-                result = int(operands[0]) / int(operands[1])
-            except ZeroDivisionError:
+    operator = operator[0]
+    if operator == '+':
+        result = int(operands[0]) + int(operands[1])
+    elif operator == '-':
+        result = int(operands[0]) - int(operands[1])
+    elif operator == '*':
+        result = int(operands[0]) * int(operands[1])
+    elif operator == '/':
+        try:
+            result = int(operands[0]) / int(operands[1])
+        except ZeroDivisionError:
 
-                return 'Деление на ноль'
+            return 'Делить на ноль нельзя'
     return result
 
 
